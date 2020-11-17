@@ -16,7 +16,7 @@ public class Mainly {
 		var varargs = new Integer[21];
 		int i = 1;
 		while (i <= 20) {
-			varargs[i] = Integer.valueOf(JOptionPane.showInputDialog(frame, "Number " + i + " of " + 20 ));
+			varargs[i] = Integer.valueOf(JOptionPane.showInputDialog(frame, "Number " + i + " of " + 20));
 			i++;
 		}
 
@@ -25,12 +25,14 @@ public class Mainly {
 
 		showResultDesc(varargs);
 		showResultAsc(varargs);
+		System.exit(500);
 	}
 
 	@SafeVarargs
 	private static void showResultDesc(Integer... varargs) {
 		Arrays.sort(varargs);
 		JOptionPane.showMessageDialog(frame, "Numbers in ascending order " + Arrays.toString(varargs));
+
 	}
 
 	@SafeVarargs
