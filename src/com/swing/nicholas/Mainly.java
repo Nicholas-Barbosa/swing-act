@@ -20,11 +20,12 @@ public class Mainly {
 			i++;
 		}
 
-		varargs = Arrays.asList(varargs).stream().filter(x -> x != null).collect(Collectors.toList())
+		varargs = Arrays.asList(varargs).parallelStream().filter(x -> x != null).distinct().collect(Collectors.toList())
 				.toArray(new Integer[0]);
 
 		showResultDesc(varargs);
 		showResultAsc(varargs);
+
 		System.exit(500);
 	}
 
@@ -40,4 +41,5 @@ public class Mainly {
 		Arrays.sort(varargs, Comparator.reverseOrder());
 		JOptionPane.showMessageDialog(frame, "Numbers in descending order " + Arrays.toString(varargs));
 	}
+
 }
